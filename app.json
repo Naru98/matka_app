@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "matka",
-    "slug": "matka",
+    "slug": "game5",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.naru55.game5"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ab4381a6-6901-4535-a589-8afefe23cf4e"
+      }
+    },
+    "owner": "naru55"
   }
 }
