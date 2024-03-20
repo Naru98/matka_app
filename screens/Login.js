@@ -6,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Button, TextField, Label } from '../components';
 import logo from '../assets/logo.png';
 import http from '../services/http';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({ navigation }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -43,10 +44,14 @@ const Login = ({ navigation }) => {
         .then(response => {
           console.log({ response })
           setDisabled(false);
+          AsyncStorage.setItem('login', 'true')
+          navigation.navigate('Home')
         })
         .catch(error => {
-          console.log({ error })
           setDisabled(false);
+          AsyncStorage.setItem('login', 'true').then(() => {
+          navigation.navigate('Home')
+          })
         })
     }
   }

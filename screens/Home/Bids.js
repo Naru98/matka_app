@@ -2,6 +2,7 @@ import React from "react";
 import { Text, ScrollView, View, RefreshControl } from "react-native";
 import { Button } from "../../components"
 import COLORS from "../../constants/colors";
+import ListItem from '../../components/ListItem';
 
 
 const items = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -22,7 +23,16 @@ const Bids = () => {
       <View style={{
         alignItems: 'center'
       }}>
-        <Text>Bids screen</Text>
+        <ListItem>
+          <View style={{
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+          }}>
+        <Text>Kalyan</Text>
+        <Text>22</Text>
+        <Text>**</Text>
+        </View>
+        </ListItem>
       </View>
     </ScrollView>
   );

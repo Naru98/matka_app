@@ -11,8 +11,9 @@ export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    AsyncStorage.getItem('loggedin').then((value) => {
-      setLoggedIn(!value);
+    AsyncStorage.getItem('login').then((value) => {
+      !value ? setLoggedIn(false) :
+        value && value === 'true' ? setLoggedIn(true) : setLoggedIn(false);
     }
     );
   }, []);
@@ -23,28 +24,27 @@ export default function App() {
         <Stack.Navigator
           initialRouteName={loggedIn ? 'Home' : 'Login'}
         >
-          {loggedIn ? <Stack.Screen
+          <Stack.Screen
             name="Home"
             component={Home}
             options={{
               headerShown: false
             }}
-          /> : (<>
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{
-                headerShown: false
-              }}
-            />
-            <Stack.Screen
-              name="Signup"
-              component={Signup}
-              options={{
-                headerShown: false
-              }}
-            />
-          </>)}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
+            options={{
+              headerShown: false
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       <Toast />
