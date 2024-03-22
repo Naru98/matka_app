@@ -12,10 +12,18 @@ const ListItem = (props) => {
 
 const styles = StyleSheet.create({
   listItem: {
-    fontSize: 16,
-    fontWeight: 400,
-    marginVertical: 8,
-    color: COLORS.black
+    padding: 11,
+    backgroundColor: COLORS.white,
+    width: '100%',
+    shadowColor: "#444",
+    marginBottom: 2,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   }
 })
 
